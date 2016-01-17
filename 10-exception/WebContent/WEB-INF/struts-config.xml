@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+  "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="dataForm" type="pkg.DataForm" />
+	</form-beans>
+	<global-exceptions>
+		<exception key="error.message" type="java.io.IOException"
+			path="/exceptionalPage.jsp" />
+	</global-exceptions>
+	<action-mappings>
+		<action path="/Data" type="pkg.DataAction" name="dataForm"
+			input="/index.jsp">
+			<!-- LOCAL EXCEPTION. -->
+			<!--
+				<exception key="error.message" type="java.io.IOException"
+				path="/exceptionalPage.jsp"/>
+			-->
+			<forward name="success" path="/result.jsp" />
+			<forward name="failure" path="/index.jsp" />
+		</action>
+	</action-mappings>
+	<message-resources parameter="pkg/ApplicationResource" />
+</struts-config>

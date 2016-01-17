@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<definition name="theDefinition" template="/baseLayout.jsp">
+    <put name="title" value="Using XML Definition" />
+    <put name="header" value="/header.jsp" />
+    <put name="menu" value="/menu.jsp" />
+    <put name="body" value="/body.jsp" />
+    <put name="footer" value="/footer.jsp" />
+</definition>
+</tiles-definitions>
+

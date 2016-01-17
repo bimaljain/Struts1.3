@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+  "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="dataForm" type="pkg.DataForm" />
+	</form-beans>
+	<global-forwards>
+		<forward name="welcome" path="/welcome.bj"/>
+	</global-forwards>
+	<action-mappings>
+		<!-- 1. Using Struts Tag Library -->
+		<!-- <action path="/welcome" 
+					type="org.apache.struts.actions.ForwardAction" 
+					parameter="/welcome.jsp"/> -->
+		
+		<!-- Alternate to #1 -->
+		<!-- <action path="/welcome" forward="/welcome.jsp" /> -->
+		
+		<!-- 2. Using JSP Standard Action -->
+		<action path="/welcome" forward="/welcome.jsp" />
+		
+		<!-- Common Action -->
+		<action path="/Data" type="pkg.DataAction" name="dataForm">
+			<forward name="success" path="/result.jsp"/>
+			<forward name="failure" path="/index.jsp"/>
+		</action> 
+	</action-mappings>
+	<message-resources parameter="pkg/ApplicationResource"/> 
+</struts-config>
